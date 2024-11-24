@@ -1,12 +1,9 @@
-<script setup>
-  import ProductsPage from '@pages/ProductsPage.vue'
-</script>
-
 <template>
-  <div>
-    <ProductsPage />
-  </div>
+  <router-view />
 </template>
 
-<style scoped lang="scss">
-</style>
+<script setup>
+defineOptions({
+  name: 'App'
+});
+</script>
