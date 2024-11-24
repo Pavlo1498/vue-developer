@@ -1,18 +1,18 @@
 <script setup>
-import { onMounted } from 'vue';
+import { showModalSendForm, showModalCreateForm } from 'helpers/productsHelper';
 
-import { getProducts } from 'api/getAxios.js';
-
-onMounted(async () => {
-    await getProducts();
-});
+import CreateProductForm from 'components/forms/CreateProductForm.vue';
+import SendProductForm from 'components/forms/SendProductForm.vue';
+import ProductsLists from 'components/ProductsLists.vue';
 
 </script>
 
 <template>
-    <div class=''>
-        products
-    </div>
+    <CreateProductForm v-if="showModalCreateForm"/>
+    <SendProductForm v-if="showModalSendForm"/>
+    <q-page>
+        <ProductsLists />
+    </q-page>
 </template>
 
 <style lang='scss' scoped></style>

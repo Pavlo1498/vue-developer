@@ -1,1 +1,23 @@
-// app global css in SCSS form
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    padding-right: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 2px;
+    width: 4px;
+    background-color: #8a8c8b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+  width: 5px;
+  border-radius: 15px;   /* закругления плашки */
+  background: #8a8c8b;    /* цвет плашки */
+  }
+
+  ::-webkit-scrollbar-track {
+    width: 4px;
+    border-radius: 2px;
+    background-color: #464548;
+  }
