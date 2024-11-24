@@ -1,15 +1,137 @@
 {
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": true,
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": [
-    "source.fixAll.eslint"
-  ],
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "vue"
-  ]
+    "settingsSync.ignoredExtensions": [],
+    "workbench.iconTheme": "material-icon-theme",
+    "git.autofetch": true,
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true
+    },
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": ["variable.other.readwrite.alias.js"],
+                "settings": {
+                    "foreground": "#A6E22E"
+                }
+            },
+            {
+                "scope": [
+                    "variable.other.property",
+                    "variable.other.readwrite",
+                    "punctuation.separator.key-value.html.vue"
+                ],
+                "settings": {
+                    "foreground": "#c8e2be"
+                }
+            },
+            {
+                "scope": ["meta.object-literal.key.js"],
+                "settings": {
+                    "foreground": "#a7fc86"
+                }
+            },
+            {
+                "scope": ["comment.block.html"],
+                "settings": {
+                    "foreground": "#537944"
+                }
+            },
+            {
+                "scope": [
+                    "keyword.control.flow.js",
+                    "keyword.control.conditional.js",
+                    "keyword.control.switch.js",
+                    "keyword.control.trycatch.js"
+                ],
+                "settings": {
+                    "foreground": "#ce64b9"
+                }
+            },
+            // {
+            //     "scope": ["keyword.control.conditional.vue", "keyword.control.loop.vue", "keyword.operator.expression.in.ts"],
+            //     "settings": {
+            //         "foreground": "#bb358e"
+            //     }
+            // },
+            {
+                "scope": ["variable.other.constant"],
+                "settings": {
+                    "foreground": "#f8b82e"
+                }
+            },
+            {
+                "scope": ["entity.name.function.member"],
+                "settings": {
+                    "foreground": "#A6E22E"
+                }
+            },
+            {
+                "scope": ["text.html.derivative"],
+                "settings": {
+                    "foreground": "#8d8d8d"
+                }
+            },
+            {
+                "scope": [
+                    "variable.other.object.ts",
+                    "punctuation.definition.string.begin.html.vue",
+                    "punctuation.definition.string.end.html.vue"
+                ],
+                "settings": {
+                    "foreground": "#E6DB74"
+                }
+            },
+            {
+                "scope": ["keyword.other.unit.px.css"],
+                "settings": {
+                    "foreground": "#d0b8fc"
+                }
+            },
+            {
+                "scope": ["support.constant.property-value.css"],
+                "settings": {
+                    "foreground": "#d6c4f8"
+                }
+            }
+            // {
+            //     "scope": ["punctuation.separator.key-value.html.vue"],
+            //     "settings": {
+            //         "foreground": "#fce301"
+            //     }
+            // },
+        ]
+    },
+    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+    "scss.validate": false,
+    "css.validate": false,
+    "less.validate": false,
+    "stylelint.validate": ["css", "scss", "vue"],
+    //  "editor.codeActionsOnSave": {
+    //     "source.fixAll.stylelint": "explicit"
+    // },
+    "editor.codeActionsOnSave": ["source.fixAll.eslint"],
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "cSpell.userWords": [
+        "парсера",
+        "подгрузки",
+        "fasttrack",
+        "Kopernik",
+        "Longread",
+        "mguu",
+        "rvnu",
+        "vuex"
+    ],
+    "cSpell.language": "en,ru",
+    "volar.autoCompleteRefs": true,
+    "volar.inlayHints.eventArgumentInInlineHandlers": false,
+    "vscodeGoogleTranslate.preferredLanguage": "English",
+    "redhat.telemetry.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.enableSmartCommit": true,
+    "gitlens.views.stashes.files.layout": "list"
 }

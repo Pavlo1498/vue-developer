@@ -1,17 +1,17 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 </script>
 
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-      </q-toolbar>
-    </q-header>
+    <q-layout view="lHh Lpr lFf">
+        <q-header elevated>
+            <q-toolbar>
+            </q-toolbar>
+        </q-header>
 
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+        <q-page-container>
+            <router-view />
+        </q-page-container>
+    </q-layout>
 </template>
