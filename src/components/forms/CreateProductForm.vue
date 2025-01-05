@@ -2,8 +2,11 @@
 import { useQuasar } from 'quasar';
 import { ref } from 'vue';
 
-import { showModalCreateForm, filterProducts } from 'helpers/productsHelper';
-import { postProductCreate } from 'src/api/postAxios';
+import { showModalCreateForm } from 'helpers/productsHelper';
+import { productsStore } from 'stores/productsStore.js';
+
+const { filterProducts } = storeToRefs(productsStore());
+const { postProductCreate } = productsStore();
 
 const $q = useQuasar();
 

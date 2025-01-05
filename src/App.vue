@@ -1,7 +1,9 @@
 <script setup>
 import { onMounted } from 'vue';
 
-import { getProducts } from 'api/getAxios.js';
+import { productsStore } from 'stores/productsStore.js';
+
+const { getProducts } = productsStore();
 
 onMounted(async () => {
     await getProducts();

@@ -1,6 +1,19 @@
 <script setup>
-import { filterProducts, showModalSendForm, selectProduct } from 'helpers/productsHelper.js';
+import { storeToRefs } from 'pinia';
+import { computed } from 'vue';
 
+import { productsStore } from 'stores/productsStore.js';
+import { basketStore } from 'stores/basketStore.js';
+import { sizeName } from 'helpers/index';
+
+import InputCount from 'components/input/inputCount.vue';
+
+const { filterProducts } = storeToRefs(productsStore());
+const { basketProduct } = storeToRefs(basketStore());
+
+const { pushProductBasket, removeCount } = (basketStore());
+
+const checkProductInBasket = computed(() => (product) => basketProduct.value.find(item => item.id === product.id));
 </script>
 
 <template>
@@ -15,11 +28,11 @@ import { filterProducts, showModalSendForm, selectProduct } from 'helpers/produc
                     {{ product.title }}
                 </div>
             </q-img>
-            <q-card-section>
+            <q-card-section class="my-card__section">
                 <div class="my-card__content">
-                    <span>{{ product.description }}</span>
+                    <span>{{ sizeName(product.description, 320) }}</span>
                 </div>
-                <div class="my-card__footer q-mt-xl">
+                <div class="my-card__footer">
                     <q-chip>
                         <q-avatar
                             icon="currency_ruble"
@@ -29,10 +42,17 @@ import { filterProducts, showModalSendForm, selectProduct } from 'helpers/produc
                         <span>{{ product.price }}₽</span>
                     </q-chip>
                     <q-btn
+                        v-if="!checkProductInBasket(product)"
                         push
                         color="primary"
-                        label="Заказать"
-                        @click="showModalSendForm = true, selectProduct = product"
+                        label="В корзину"
+                        @click="pushProductBasket(product)"
+                    />
+                    <InputCount
+                        v-else
+                        v-model="product.count"
+                        @add="product.count += 1"
+                        @remove="removeCount(product)"
                     />
                 </div>
             </q-card-section>
@@ -43,17 +63,22 @@ import { filterProducts, showModalSendForm, selectProduct } from 'helpers/produc
 <style lang="scss" scoped>
 .my-card {
     width: 100%;
-    max-width: 250px;
+    max-width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
 
-    &__content {
-        height: 100%;
-        overflow: auto;
+    &__section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
     &__footer {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        margin-top: auto;
     }
 }
 </style>
