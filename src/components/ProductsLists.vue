@@ -6,7 +6,7 @@ import { productsStore } from 'stores/productsStore.js';
 import { basketStore } from 'stores/basketStore.js';
 import { sizeName } from 'helpers/index';
 
-import InputCount from 'components/input/inputCount.vue';
+import InputCount from 'components/input/InputCount.vue';
 
 const { filterProducts } = storeToRefs(productsStore());
 const { basketProduct } = storeToRefs(basketStore());

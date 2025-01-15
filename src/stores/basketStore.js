@@ -1,11 +1,9 @@
 import { defineStore } from 'pinia';
-import { Notify } from 'quasar';
 import { ref } from 'vue';
-
-import { api } from 'boot/axios';
 
 export const basketStore = defineStore('basketStore', () => {
     const basketProduct = ref([]);
+    const sumBaskets = ref(0);
 
     const pushProductBasket = (product) => {
         product.count = 1;
@@ -18,10 +16,18 @@ export const basketStore = defineStore('basketStore', () => {
         product.count -= 1;
         if (product.count == 0) basketProduct.value.splice(findIdProduct, 1);
     };
+
+    const countSumBaskets = () => {
+        sumBaskets.value = basketProduct.value.reduce((total, item) => {
+            return total + (item.price * item.count);
+           }, 0);
+    };
     return {
         basketProduct,
+        sumBaskets,
 
         pushProductBasket,
+        countSumBaskets,
         removeCount
     };
 });

@@ -59,6 +59,7 @@ export default configure((/* ctx */) => {
 
       extendViteConf (viteConf, { isClient, isServer }) {
         Object.assign(viteConf.resolve.alias, {
+            components: setAliasPath('./src/components'),
             helpers: setAliasPath('./src/helpers'),
             stores: setAliasPath('./src/stores')
         });
