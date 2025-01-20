@@ -41,7 +41,7 @@ export default configure((/* ctx */) => {
         node: 'node20'
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
@@ -61,7 +61,8 @@ export default configure((/* ctx */) => {
         Object.assign(viteConf.resolve.alias, {
             components: setAliasPath('./src/components'),
             helpers: setAliasPath('./src/helpers'),
-            stores: setAliasPath('./src/stores')
+            stores: setAliasPath('./src/stores'),
+            router: setAliasPath('./src/router')
         });
     },
 // viteVuePluginOptions: {},
@@ -101,7 +102,9 @@ export default configure((/* ctx */) => {
 
       // Quasar plugins
       plugins: [
-        'Notify'
+        'Notify',
+        'LocalStorage',
+        'SessionStorage'
       ]
     },
 

@@ -1,5 +1,7 @@
 <script setup>
-import { showModalCreateForm } from 'helpers/productsHelper';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 </script>
 
@@ -8,7 +10,7 @@ import { showModalCreateForm } from 'helpers/productsHelper';
         round
         color="primary"
         icon="add"
-        @click="showModalCreateForm = true"
+        @click="router.push('create-product')"
     >
         <q-tooltip>
             Создать товар

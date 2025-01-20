@@ -1,3 +1,6 @@
+import { authStore } from 'stores/authStore.js';
+
+
 const routes = [
   {
     path: '/',
@@ -8,11 +11,17 @@ const routes = [
         component: () => import('pages/ProductsPage.vue')
       },
       {
+        path: '/create-product',
+        component: () => import('pages/CreateProductPage.vue'),
+        beforeEnter: (to, from, next) => authStore().ifAuthenticated(to, from, next)
+      },
+      {
         path: '/baskets',
         name: 'baskets',
         component: () => import('pages/BasketsPage.vue')
       }
-    ]
+    ],
+    beforeEnter: (to, from, next) => authStore().ifAuthenticated(to, from, next)
   },
 
   // Always leave this as last one,

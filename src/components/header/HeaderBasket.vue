@@ -13,7 +13,6 @@ const router = useRouter();
 <template>
     <div class="q-pa-md q-gutter-sm">
         <q-btn
-            dense
             color="purple"
             round
             icon="shopping_basket"

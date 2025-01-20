@@ -1,9 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 
-import { showModalSendForm, showModalCreateForm } from 'helpers/productsHelper';
+import { showModalSendForm } from 'helpers/productsHelper';
 
-import CreateProductForm from 'components/forms/CreateProductForm.vue';
 // import SendProductForm from 'components/forms/SendProductForm.vue';
 import ProductsLists from 'components/ProductsLists.vue';
 import DrawerSearch from 'components/drawer/DrawerSearch.vue';
@@ -23,9 +22,6 @@ const leftDrawerOpen = ref(true);
     >
         <DrawerSearch />
     </q-drawer>
-
-    <CreateProductForm v-if="showModalCreateForm"/>
-    <!-- <SendProductForm v-if="showModalSendForm"/> -->
     <q-page>
         <ProductsLists />
     </q-page>

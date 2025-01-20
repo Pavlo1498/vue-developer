@@ -6,7 +6,6 @@ import { productsStore } from 'stores/productsStore.js';
 export const searchHeader = ref('');
 export const searchPrice = ref('');
 
-export const showModalCreateForm = ref(false);
 export const showModalSendForm = ref(false);
 
 const { filterProducts, productsArray } = storeToRefs(productsStore());
