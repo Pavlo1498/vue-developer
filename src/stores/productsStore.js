@@ -19,7 +19,9 @@ export const productsStore = defineStore('productsStore', () => {
 
             filterProducts.value = resp.data;
             productsArray.value = resp.data;
-        } catch (error) {}
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const postProductSend = async (payload) => {
@@ -37,7 +39,9 @@ export const productsStore = defineStore('productsStore', () => {
                 classes: 'glossy',
                 position: 'top-right'
               });
-        } catch (error) {}
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const postProductCreate = async (payload) => {
@@ -55,7 +59,9 @@ export const productsStore = defineStore('productsStore', () => {
                 classes: 'glossy',
                 position: 'top-right'
               });
-        } catch (error) {}
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return {

@@ -6,7 +6,7 @@ import { showModalSendForm, selectProduct } from 'helpers/productsHelper';
 import { postProductSend } from 'src/api/postAxios';
 import { sendObject } from 'helpers/sendProductHelper';
 
-const { values, errors, handleSubmit, defineField } = useForm({
+const { errors, defineField } = useForm({
   validationSchema: yup.object({
     email: yup.string().email().required(),
     address: yup.string().min(6).required()

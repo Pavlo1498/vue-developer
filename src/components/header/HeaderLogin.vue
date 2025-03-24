@@ -1,16 +1,11 @@
 <script setup>
 import { storeToRefs } from 'pinia';
-import { useRouter } from 'vue-router';
 
 import { showAuthModal } from 'helpers/authHelp.js';
-import { basketStore } from 'stores/basketStore.js';
 import { authStore } from 'stores/authStore.js';
 
-const { basketProduct } = storeToRefs(basketStore());
 const { isAuth, login } = storeToRefs(authStore());
-const { onLogout, onReset } = authStore();
-
-const router = useRouter();
+const { onLogout } = authStore();
 
 </script>
 

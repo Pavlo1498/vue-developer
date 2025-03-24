@@ -1,9 +1,6 @@
 <script setup>
 import { ref } from 'vue';
 
-import { showModalSendForm } from 'helpers/productsHelper';
-
-// import SendProductForm from 'components/forms/SendProductForm.vue';
 import ProductsLists from 'components/ProductsLists.vue';
 import DrawerSearch from 'components/drawer/DrawerSearch.vue';
 

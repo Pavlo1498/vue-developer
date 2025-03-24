@@ -1,5 +1,4 @@
 <script setup>
-import { ref, watchEffect } from 'vue';
 import { storeToRefs } from 'pinia';
 
  import { basketStore } from 'stores/basketStore.js';
