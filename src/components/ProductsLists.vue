@@ -44,6 +44,7 @@ const checkProductInBasket = computed(() => (product) => basketProduct.value.fin
                     <q-btn
                         v-if="!checkProductInBasket(product)"
                         push
+                        data-cy="push-product"
                         color="primary"
                         label="В корзину"
                         @click="pushProductBasket(product)"

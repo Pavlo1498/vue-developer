@@ -23,5 +23,3 @@ const leftDrawerOpen = ref(true);
         <ProductsLists />
     </q-page>
 </template>
-
-<style lang='scss' scoped></style>

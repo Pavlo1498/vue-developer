@@ -41,12 +41,7 @@ export default configure(() => ({
                 });
             },
             vitePlugins: [
-                ['vite-plugin-checker', {
-                    eslint: {
-                        lintCommand: 'eslint "./src/**/*.{js,mjs,cjs,vue}"',
-                        useFlatConfig: true
-                    }
-                }, { server: false }
+                ['vite-plugin-checker', {}, { server: false }
                 ],
                 ['vite-svg-loader']
             ]
