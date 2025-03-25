@@ -74,11 +74,16 @@ export default configure(() => ({
             hideSplashscreen: true
         },
         electron: {
-            inspectPort: 5858,
-            bundler: 'packager', // 'packager' or 'builder'
-            packager: {},
+            bundler: 'builder', // set here instead of using command line flag --bundler
             builder: {
-                appId: 'quasar-project'
+              appId: 'com.electron.myelectronapp',
+              win: {
+                target: 'nsis'
+              },
+              publish: {
+                'provider': 's3',
+                'bucket': 'myS3bucket'
+              }
             }
         },
         bex: {
